@@ -9,6 +9,8 @@
     <AssemblyOriginatorKeyFile>..\Common\foundationdb-net-client.snk</AssemblyOriginatorKeyFile>
     <PackageTags>foundationdb fdb nosql</PackageTags>
     <Description>.NET Binding for FoundationDB</Description>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign>true</PublicSign>
   </PropertyGroup>
 
   <Import Project="..\Common\VersionInfo.props" />

@@ -10,6 +10,8 @@
     <PackageTags>foundationdb fdb nosql</PackageTags>
     <Description>.NET Binding for FoundationDB</Description>
     <Version>6.2.0-preview</Version>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign>true</PublicSign>
   </PropertyGroup>
 
   <Import Project="..\Common\VersionInfo.props" />

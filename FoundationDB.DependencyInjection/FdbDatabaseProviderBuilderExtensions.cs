@@ -39,7 +39,6 @@ namespace FoundationDB.DependencyInjection
 
 		public static IFdbDatabaseProviderBuilder WithApiVersion(this IFdbDatabaseProviderBuilder builder, int apiVersion)
 		{
-			Contract.GreaterThan(apiVersion, 0, nameof(apiVersion));
 			builder.Services.Configure<FdbDatabaseProviderOptions>(c =>
 			{
 				c.ApiVersion = apiVersion;
@@ -49,7 +48,6 @@ namespace FoundationDB.DependencyInjection
 
 		public static IFdbDatabaseProviderBuilder WithConnectionString(this IFdbDatabaseProviderBuilder builder, FdbConnectionOptions options)
 		{
-			Contract.NotNull(options, nameof(options));
 			builder.Services.Configure<FdbDatabaseProviderOptions>(c =>
 			{
 				c.ConnectionOptions = options;
