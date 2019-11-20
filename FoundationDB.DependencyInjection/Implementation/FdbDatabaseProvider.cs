@@ -43,27 +43,23 @@ namespace FoundationDB.DependencyInjection
 
 		public bool IsAvailable { get; private set; }
 
-		[NotNull]
 		public FdbDatabaseProviderOptions Options { get; }
 
 		private TaskCompletionSource<IFdbDatabase> InitTask;
 
-		[NotNull]
 		private Task<IFdbDatabase> DbTask;
 
-		[NotNull]
 		private CancellationTokenSource LifeTime { get; } = new CancellationTokenSource();
 
 		private Exception Error { get; set;}
 
-		[Pure, NotNull]
-		public static IFdbDatabaseProvider Create([NotNull] FdbDatabaseProviderOptions options)
+		public static IFdbDatabaseProvider Create(FdbDatabaseProviderOptions options)
 		{
 			Contract.NotNull(options, nameof(options));
 			return new FdbDatabaseProvider(Microsoft.Extensions.Options.Options.Create(options));
 		}
 
-		public FdbDatabaseProvider([NotNull] IOptions<FdbDatabaseProviderOptions> optionsAccessor)
+		public FdbDatabaseProvider(IOptions<FdbDatabaseProviderOptions> optionsAccessor)
 		{
 			Contract.NotNull(optionsAccessor, nameof(optionsAccessor));
 			this.Options = optionsAccessor.Value;

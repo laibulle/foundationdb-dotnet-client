@@ -2,13 +2,13 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFrameworks>net472;netcoreapp3.0</TargetFrameworks>
 		<ProjectGuid>{60049BA1-A95F-4127-BAC5-74AF023D3082}</ProjectGuid>
 		<RestorePackages>true</RestorePackages>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<RootNamespace>FdbBurner</RootNamespace>
 		<AssemblyName>FdbBurner</AssemblyName>
 		<AssemblyOriginatorKeyFile>..\Common\foundationdb-net-client.snk</AssemblyOriginatorKeyFile>
+		<TargetFramework>netcoreapp3.0</TargetFramework>
 	</PropertyGroup>
 
 	<Import Project="..\Common\VersionInfo.props" />

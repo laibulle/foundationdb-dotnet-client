@@ -35,7 +35,6 @@ namespace FoundationDB.DependencyInjection
 	public interface IFdbDatabaseProviderBuilder
 	{
 
-		[NotNull]
 		IServiceCollection Services { get; }
 
 	}
