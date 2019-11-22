@@ -15,5 +15,5 @@ script:
     #- ./build.sh
     - dotnet pack
     #- nuget source Add -Name "GitHub" -Source "" -UserName $USERNAME -Password $PASSWORD
-    - dotnet pack -c Release
-    - dotnet nuget push "foundationdb-dotnet-client.nupkg" -s "https://nuget.pkg.github.com/laibulle/index.json" -k $PASSWORD
+    - dotnet pack FoundationDB.Client/FoundationDB.Client.csproj -c Release --output nupkgs
+    - dotnet nuget push nupkgs/FoundationDB.Client.6.2.0-preview.nupkg -s "https://nuget.pkg.github.com/laibulle/index.json" -k $PASSWORD
