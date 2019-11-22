@@ -14,4 +14,4 @@ script:
   - dotnet restore
   - dotnet pack
   - dotnet pack FoundationDB.Client/FoundationDB.Client.csproj -c Release --output nupkgs
-  - dotnet nuget push nupkgs/FoundationDB.Client.6.2.0-preview.nupkg -s "https://nuget.pkg.github.com/laibulle/index.json" -k $PASSWORD
+  - dotnet nuget push nupkgs/FoundationDB.Client.6.2.0-preview.nupkg -s "https://nuget.pkg.github.com/$USERNAME/index.json" -k $PASSWORD
