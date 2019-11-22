@@ -1,6 +1,12 @@
 language: csharp
 solution: FoundationDB.Client.sln
 
+services:
+    - docker
+
+before_script:
+	- docker pull foundationdb/foundationdb:6.2.10
+
 mono: none
 dotnet: 3.0
 script:
