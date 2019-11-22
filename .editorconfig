@@ -36,3 +36,8 @@ dotnet_style_null_propagation = true:suggestion
 dotnet_style_qualification_for_method = false:suggestion
 
 csharp_style_inlined_variable_declaration = true:suggestion
+
+# Matches the exact files either package.json or .travis.yml
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2

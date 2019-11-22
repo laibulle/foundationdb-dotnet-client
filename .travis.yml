@@ -2,18 +2,16 @@ language: csharp
 solution: FoundationDB.Client.sln
 
 services:
-    - docker
+  - docker
 
 before_script:
-	- docker pull foundationdb/foundationdb:6.2.10
+  - docker pull foundationdb/foundationdb:6.2.10
 
 mono: none
 dotnet: 3.0
 script:
-    - sed -i 's/<TargetFrameworks>.*/<TargetFramework>netstandard2.1<\/TargetFramework>/g' */*.csproj
-    - dotnet restore
-    #- ./build.sh
-    - dotnet pack
-    #- nuget source Add -Name "GitHub" -Source "" -UserName $USERNAME -Password $PASSWORD
-    - dotnet pack FoundationDB.Client/FoundationDB.Client.csproj -c Release --output nupkgs
-    - dotnet nuget push nupkgs/FoundationDB.Client.6.2.0-preview.nupkg -s "https://nuget.pkg.github.com/laibulle/index.json" -k $PASSWORD
+  - sed -i 's/<TargetFrameworks>.*/<TargetFramework>netstandard2.1<\/TargetFramework>/g' */*.csproj
+  - dotnet restore
+  - dotnet pack
+  - dotnet pack FoundationDB.Client/FoundationDB.Client.csproj -c Release --output nupkgs
+  - dotnet nuget push nupkgs/FoundationDB.Client.6.2.0-preview.nupkg -s "https://nuget.pkg.github.com/laibulle/index.json" -k $PASSWORD
