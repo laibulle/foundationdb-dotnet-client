@@ -5,4 +5,7 @@ mono: none
 dotnet: 3.0
 script:
     - dotnet restore
-    - ./build.sh
+	- ./build.sh
+	- nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/laibulle/index.json" -UserName $USERNAME -Password $PASSWORD
+	- nuget pack
+	- nuget push "foundationdb-dotnet-client.nupkg" -Source "GitHub"
