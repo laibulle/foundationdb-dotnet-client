@@ -10,7 +10,7 @@ before_script:
 mono: none
 dotnet: 3.0
 script:
-  - for i in */*.csproj; do sed -i 's/<TargetFrameworks>.*/<TargetFramework>472;netstandard2.1<\/TargetFramework>/g' $i; done
+  #- for i in */*.csproj; do sed -i 's/<TargetFrameworks>.*/<TargetFramework>472;netstandard2.1<\/TargetFramework>/g' $i; done
   - dotnet restore
   - dotnet pack
   - dotnet pack FoundationDB.Client/FoundationDB.Client.csproj -c Release --output nupkgs
