@@ -4,8 +4,9 @@ solution: FoundationDB.Client.sln
 mono: none
 dotnet: 3.0
 script:
+	- sed -i 's/<TargetFrameworks>.*/<TargetFramework>netstandard2.1<\/TargetFramework>/g' */*.csproj
     - dotnet restore
 	- ./build.sh
 	- nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/laibulle/index.json" -UserName $USERNAME -Password $PASSWORD
-	- nuget pack
+	- nuget pack -c Release
 	- nuget push "foundationdb-dotnet-client.nupkg" -Source "GitHub"
