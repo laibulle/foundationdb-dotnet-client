@@ -7,6 +7,7 @@ script:
     #- sed -i 's/<TargetFrameworks>.*/<TargetFramework>netstandard2.1<\/TargetFramework>/g' */*.csproj
     - dotnet restore
     #- ./build.sh
+    - dotnet pack
     - nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/laibulle/index.json" -UserName $USERNAME -Password $PASSWORD
     - nuget pack -c Release
     - nuget push "foundationdb-dotnet-client.nupkg" -Source "GitHub"
