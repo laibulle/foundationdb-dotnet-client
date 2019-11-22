@@ -8,6 +8,6 @@ script:
     - dotnet restore
     #- ./build.sh
     - dotnet pack
-    - nuget source Add -Name "GitHub" -Source "https://nuget.pkg.github.com/laibulle/index.json" -UserName $USERNAME -Password $PASSWORD
+    #- nuget source Add -Name "GitHub" -Source "" -UserName $USERNAME -Password $PASSWORD
     - dotnet pack -c Release
-    - dotnet nuget push "foundationdb-dotnet-client.nupkg" -s "https://github.com/laibulle/foundationdb-dotnet-client" -k $PASSWORD
+    - dotnet nuget push "foundationdb-dotnet-client.nupkg" -s "https://nuget.pkg.github.com/laibulle/index.json" -k $PASSWORD
