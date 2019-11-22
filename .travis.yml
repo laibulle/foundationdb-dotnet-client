@@ -1,0 +1,8 @@
+language: csharp
+solution: FoundationDB.Client.sln
+
+mono: none
+dotnet: 3.0
+script:
+    - dotnet restore
+    - ./build.sh
